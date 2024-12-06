@@ -45,21 +45,33 @@ This is a basic NestJS application demonstrating how to set up and configure a M
 ## Project Structure
 nestjs-mongo
 ```
+nestjs-mongo
 ├── src
-│   ├── users
-│   │   ├── dto
+│   ├── config                 # Configuration-related module
+│   │   ├── config.module.ts   # Module definition for configuration
+│   │   ├── config.service.ts  # Service to access environment variables
+│   │   └── config.interface.ts # Optional: Interface for strongly-typed config values
+│   ├── users                  # Users module
+│   │   ├── dto                # Data Transfer Objects for validation
 │   │   │   ├── create-user.dto.ts
-│   │   │   ├── update-user.dto.ts
-│   │   ├── schemas
+│   │   │   └── update-user.dto.ts
+│   │   ├── schemas            # MongoDB schemas
 │   │   │   └── user.schema.ts
-│   │   ├── users.controller.ts
-│   │   ├── users.module.ts
-│   │   ├── users.service.ts
-│   │   ├── users.repository.ts
-│   ├── app.module.ts
-├── .env
-├── package.json
-└── README.md
+│   │   ├── users.controller.ts # Controller for handling HTTP requests
+│   │   ├── users.module.ts     # Module definition for users
+│   │   ├── users.repository.ts # Handles database operations
+│   │   ├── users.service.ts    # Business logic for users
+│   ├── app.module.ts          # Root module of the application
+│   ├── main.ts                # Application entry point
+├── test                       # End-to-end tests
+│   └── app.e2e-spec.ts        # Example E2E test for the app
+├── .env                       # Environment variables (excluded from version control)
+├── .env.example               # Example environment variables file for developers
+├── .gitignore                 # Ignored files in Git
+├── package.json               # Project dependencies and scripts
+├── tsconfig.json              # TypeScript configuration
+├── README.md                  # Project documentation
+
 ```
 
 ---
